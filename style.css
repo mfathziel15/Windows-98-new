@@ -1,0 +1,331 @@
+*{*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    font-family:Courier New, Courier New;
+    overflow:hidden;
+}
+
+body{
+    background:url("wallpaper.jpg");
+}
+
+/* Desktop */
+.desktop{
+    position:fixed;
+    inset:0;
+    bottom:50px;
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* Icon */
+.icon{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:80px;
+    gap:4px;
+}
+
+.icon img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+.icon span{
+    color:white;
+    font-size:12px;
+    text-align:center;
+}
+.icon{
+    width:80px;
+    text-align:center;
+    color:white;
+    cursor:pointer;
+    user-select:none;
+    
+}
+.icon span{
+    color:white;
+    text-shadow:1px 1px 2px black;
+}
+}
+
+.emoji{
+    font-size:42px;
+}
+
+.icon span{
+    display:block;
+    margin-top:5px;
+    font-size:13px;
+}
+.icon span{
+    margin-top:4px;
+    line-height:1.2;
+    font-size:12px;
+    color:white;
+}
+/* Window */
+
+
+/* Title Bar */
+.title-bar{
+    background:#0a4fb8;
+    color:white;
+
+    padding:10px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.title-bar button{
+    width:28px;
+    height:28px;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* Content */
+.window-content{
+    padding:15px;
+}
+
+.file{
+    padding:10px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+.file:hover{
+    background:#d9e8ff;
+}
+
+/* Taskbar */
+.taskbar{
+    position:fixed;
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:50px;
+
+    background:#c0c0c0;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 10px;
+
+    border-top:2px solid #888;
+}
+.window{
+    position:absolute;
+
+    top:100px;
+    left:50px;
+
+    width:90%;
+    max-width:600px;
+    min-height:250px;
+
+    background:white;
+    border:2px solid black;
+
+    box-shadow:5px 5px 15px rgba(0,0,0,0.4);
+
+    display:none;
+
+    z-index:100;
+}
+
+.title-bar{
+    background:#0a4fb8;
+    color:white;
+
+    padding:10px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    cursor:move;
+
+    touch-action:none;
+}
+.start-btn{
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:0 12px;
+
+    background:#d4d0c8;
+    border:2px solid #808080;
+
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.start-btn img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+.start-btn{
+    box-shadow:
+        inset 1px 1px white,
+        inset -1px -1px #555;
+}
+.taskbar{
+    position:fixed;
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:50px;
+
+    background:#c0c0c0;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 5px;
+    gap:6px;
+}
+
+.taskbar-apps{
+    flex:1;
+    display:flex;
+    gap:4px;
+    overflow-x:auto;
+}
+
+.task-btn{
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:0 10px;
+
+    background:#d4d0c8;
+    border:1px solid #808080;
+
+    cursor:pointer;
+}
+
+.task-btn img{
+    width:56px;
+    height:56px;
+}
+.icon.selected{
+    background:rgba(0,0,128,0.4);
+}
+}
+.title-bar{
+    cursor:move;
+    touch-action:none;
+}
+/* HP */
+@media (max-width: 768px){
+
+    .icon{
+        width:70px;
+    }
+
+    .emoji{
+        font-size:36px;
+    }
+
+    .window{
+        width:95%;
+        top:60px;
+        min-height:200px;
+    }
+
+    .title-bar{
+        padding:12px;
+    }
+
+    .window-content{
+        padding:12px;
+    }
+}
+.file img{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+.start-menu {
+  position: absolute;
+  bottom: 45px;
+  left: 5px;
+  width: 180px;
+  background: #c0c0c0;
+  border: 2px solid #808080;
+  box-shadow: 2px 2px black;
+  z-index: 9999;
+}
+
+.menu-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #000080;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+.menu-item {
+  padding: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-item:hover {
+  background: #000080;
+  color: white;
+}
+
+/* SUBMENU */
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 160px;
+  background: #c0c0c0;
+  border: 2px solid #808080;
+  box-shadow: 2px 2px black;
+  z-index: 10000;
+}
+
+/* supaya item submenu rapi */
+.submenu .menu-item {
+  white-space: nowrap;
+}
+
+/* hidden */
+.hidden {
+  display: none;
+}

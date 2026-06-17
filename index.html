@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Folder UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="desktop"> 
+       <div class="icon" onclick="openFolder('myComputer')">
+    <img src="mycomputer.png">
+    <span>My Computer</span>
+    </div>
+    
+    <div class="icon" onclick="openFolder('myDocuments')">
+        <img src="myfiles.png">
+        <span>My Documents</span>
+        </div>
+
+    <div class="icon" onclick="openFolder('internetExplorer')">
+     <img src="assets/Explorer.png">
+        <span>Internet Explorer</span>
+        
+    </div>
+    <div class="icon">
+        <img src="trashbin.png">
+        <span>Recycle Bin</span>
+                </div>
+</div>
+ 
+
+   <div class="taskbar">
+
+    <button class="start-btn" onclick="toggleStartMenu()">
+        <img src="start.png" alt="">
+          <div id="startMenu" class="start-menu hidden">
+    <div class="menu-item">
+        <div class="menu-item has-sub" onclick="toggleProgramsSubmenu(event)">
+  📁 Programs
+
+  <div id="programsSubmenu" class="submenu hidden">
+    <div class="menu-item">📄 Notepad</div>
+    <div class="menu-item">🎨 Paint</div>
+    <div class="menu-item">💻 Command Prompt</div>
+    <div class="menu-item">🧮 Calculator</div>
+  </div>
+</div>
+</div>
+    <div class="menu-item">⚙️ Settings</div>
+    <div class="menu-item">🔍 Search</div>
+    <div class="menu-item">📄 Documents</div>
+    <hr>
+    <div class="menu-item">⏻ Shut Down</div>
+    
+ 
+
+    </button>
+
+    <div class="taskbar-apps">
+
+        <button class="task-btn">
+            <img src="mycomputer.png" alt="">
+            
+        </button>
+
+        <button class="task-btn">
+            <img src="explorer.png" alt="">
+            
+        </button>
+
+    </div>
+
+    <div class="taskbar-clock" id="clock">
+        21:15
+    </div>
+
+</div>
+
+</div>
+</div>
+
+<div class="window" id="myDocuments">
+<div class="title-bar">
+        <span>My Documents</span>
+        <button onclick="closeFolder('myDocuments')">✕</button>
+    </div>
+
+    <div class="window-content">
+        <div class="file">📄 note.txt</div>
+        <div class="file">📄 secret.txt</div>
+        <div class="file">📄 dont_open.txt</div>
+    </div>
+    </div>
+    
+    <div class="window" id="myComputer">
+
+<div class="title-bar">
+        <span>My Computer</span>
+        <button onclick="closeFolder('myComputer')">✕</button>
+    </div>
+    
+    <div class="window-content">
+
+    <div class="file" onclick="openFolder('driveC')">
+    📁 Local Disk (C:)
+    </div>
+    <div class="file" onclick="openFolder('driveD')">📁 Local Disk (D:)
+    </div>
+    <div class="file">
+        💿 DVD Drive</div>
+
+</div>
+</div>
+  <div class="window" id="internetExplorer">
+
+<div class="title-bar">
+        <span>Internet Explorer</span>
+        <button onclick="closeFolder('internetExplorer')">✕</button>
+    </div>
+<div class="window-content">
+
+    <input
+        type="text"
+        value="https://google.com"
+        style="width:100%;padding:8px;"
+    >
+
+    <iframe
+        src="https://www.google.com"
+        width="100%"
+        height="300"
+    ></iframe>
+
+</div>
+</div>
+<div class="window" id="driveC">
+
+    <div class="title-bar">
+        <span>Local Disk (C:)</span>
+        <button onclick="closeFolder('driveC')">✕</button>
+    </div>
+
+    <div class="window-content">
+
+        <div class="file" onclick="openFolder('documentsFolder')">
+            📁 Documents
+        </div>
+
+        <div class="file" onclick="openFolder('picturesFolder')">
+            📁 Pictures
+        </div>
+
+        <div class="file">
+            📁 Program Files
+        </div>
+
+    </div>
+
+</div>
+<div class="window" id="documentsFolder">
+
+    <div class="title-bar">
+        <span>Documents</span>
+        <button onclick="closeFolder('documentsFolder')">✕</button>
+    </div>
+
+    <div class="window-content">
+
+        <div class="file" onclick="openFolder('noteTxt')">
+            📄 note.txt
+        </div>
+
+        <div class="file">
+            📄 secret.txt
+        </div>
+
+    </div>
+
+</div>
+</div>
+<div class="window" id="noteTxt">
+
+    <div class="title-bar">
+        <span>note.txt - Notepad</span>
+        <button onclick="closeFolder('noteTxt')">✕</button>
+    </div>
+
+    <div class="window-content">
+        Jangan buka Secret Folder.
+    </div>
+
+</div>
+<div class="window" id="picturesFolder">
+
+    <div class="title-bar">
+        <span>Pictures</span>
+        <button onclick="closeFolder('picturesFolder')">✕</button>
+    </div>
+
+    <div class="window-content">
+
+        <div class="file" onclick="openFolder('notejpg')">
+            🖼️ note.jpg
+        </div>
+        </div>
+        </div>
+        <div class="window" id="notejpg">
+
+    <div class="title-bar">
+        <span>note.jpg</span>
+        <button onclick="closeFolder('notejpg')">✕</button>
+    </div>
+
+    <div class="window-content">
+        <div class="file">
+        <img src="assets/glitch.png" >
+        </div>
+        </div>
+        
+
+<script>
+function toggleStartMenu() {
+  document.getElementById("startMenu").classList.toggle("hidden");
+}
+</script>
+   <script src="script.js"></script>
+   
+
+</body>
+</html>
